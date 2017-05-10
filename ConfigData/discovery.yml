@@ -1,0 +1,15 @@
+---
+spring:
+  profiles: default
+server:
+  port: 8761
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl: http://${eureka.instance.hostname}:${server.port}/discovery/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
